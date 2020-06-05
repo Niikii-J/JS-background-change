@@ -1,12 +1,20 @@
-const colorBtn = document.querySelector('.colorBtn');
+const hexNumbers = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']
+const hexBtn = document.querySelector('.hexBtn');
 const bodyBcg = document.querySelector('body');
+const hex = document.querySelector('.hex');
 
-const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink'];
+hexBtn.addEventListener('click',getHex);
 
-colorBtn.addEventListener('click',changeColor);
+function getHex (){
+   let hexCol = '#';
 
-function changeColor (){
-   // bodyBcg.style.backgroundColor = colors[1];
-   let random = Math.floor(Math.random()*colors.length)
-   bodyBcg.style.backgroundColor = colors[random];
+   for(let i = 0; i < 6; i++){
+      let random = Math.floor(Math.random()*hexNumbers.length);
+      hexCol += hexNumbers[random];
+   }
+   bodyBcg.style.backgroundColor = hexCol;
+   hex.innerHTML = hexCol;
+
+
+
 }
