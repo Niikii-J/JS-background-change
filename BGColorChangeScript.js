@@ -14,7 +14,4 @@ function getHex (){
    }
    bodyBcg.style.backgroundColor = hexCol;
    hex.innerHTML = hexCol;
-
-
-
 }
